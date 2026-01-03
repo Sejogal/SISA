@@ -1,0 +1,53 @@
+import { StyleSheet } from "react-native";
+
+export default StyleSheet.create({
+    title2:{
+        fontSize:28,
+        fontWeight:'bold',
+    },
+    title3:{
+        fontSize:16,
+        fontWeight:'bold',
+        color:'#6D6D6D'
+    },
+    input:{
+        width:300,
+        borderColor:'#ccc',
+        borderWidth:1,
+        borderRadius:5,
+        padding:10,
+        marginBottom:15,
+    },
+    //------------------------------------------------
+    sidebar:{
+        flex:1,
+        flexDirection:'column',
+        backgroundColor:'#032313',
+        position:'absolute',
+        left:0,
+        top:0,
+        bottom:0,
+        height:'100%',
+        width:240
+    },
+    //------------------------------------------------
+    navbar:{
+        width:'100%',
+        flexDirection:'row',
+        position:'absolute',
+        top:0,
+        left:0,
+        justifyContent:'space-between',
+        borderRadius:5,
+        height:80,
+        borderBottomColor:'#ccc',
+        borderBottomWidth:1
+    },
+    //------------------------------------------------
+    content_area:{
+        flex:1,
+        marginLeft:240, //sidebar width
+        marginTop:80,
+        backgroundColor:'#f5f5f5',
+    }
+});
