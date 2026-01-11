@@ -18,6 +18,11 @@ export default StyleSheet.create({
         padding:10,
         marginBottom:15,
     },
+    texto: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontFamily: 'plus-jakarta-sans'
+    },
     //------------------------------------------------
     sidebar:{
         flex:1,

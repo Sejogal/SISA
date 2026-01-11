@@ -1,40 +1,83 @@
-import style from '@/assets/styles/style';
-import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
-//Importar icones
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import "@/assets/styles/style.css";
+import React from "react";
 
-const Content_Area = () => {
-    return (
-        <View style={style.content_area} >
+export default function Content_Area(props) {
+  return (
+    <div className="dashboard">
 
-            <View style={{ flex:0.1, flexDirection:'row', margin: '1%', padding: 20, backgroundColor: '#FFFFFF', borderRadius: 16, justifyContent:'space-between', alignItems:'center' }} >
-                <Text style={styles.texto} >Estado do Elevador</Text>
+      <div className="dashboard-header">
+        <h2>Estado do Elevador</h2>
+        <span className="status online">Em andamento</span>
+      </div>
 
-                <View style={{ flexDirection: 'row', alignItems: 'center' }} >
-                    <FontAwesome name="circle" size={24} color="green" />
-                    <Text>  Em andamento</Text>
-                </View>
+      <div className="energy-cards">
+        <div className="card dark">
+          <p>Energia Gerada</p>
+          <h3>38.9 kWh</h3>
+        </div>
 
-            </View>
+        <div className="card">
+          <p>Energia consumida</p>
+          <h3>32.1 kWh</h3>
+        </div>
 
-        </View>
-    );
+        <div className="card">
+          <p>Energia Armazenada</p>
+          <h3>15.4 kWh</h3>
+        </div>
+      </div>
+
+      <div className="battery-grid">
+        <div className="card">
+          <div className="battery-header">
+            <h4>Bateria A</h4>
+            <span className="badge charging">A carregar</span>
+          </div>
+
+          <p>Carga</p>
+          <div className="progress">
+            <div className="progress-fill" style={{ width: "95%" }} />
+          </div>
+
+          <div className="battery-health good">
+            Saúde da bateria — 95%
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="battery-header">
+            <h4>Bateria B</h4>
+            <span className="badge active">Em uso</span>
+          </div>
+
+          <p>Carga</p>
+          <div className="progress">
+            <div className="progress-fill" style={{ width: "50%" }} />
+          </div>
+
+          <div className="battery-health warning">
+            Saúde da bateria — 80%
+          </div>
+        </div>
+      </div>
+
+      <div className="bottom-grid">
+        <div className="card">
+          <h4>Fonte Ativa de Energia</h4>
+          <p>Painéis Solares</p>
+          <span className="muted">A alimentar o sistema</span>
+        </div>
+
+        <div className="card">
+          <h4>Energia para o Edifício</h4>
+          <p className="energy-value">2.4 kWh</p>
+          <span className="muted">Iluminação</span>
+        </div>
+      </div>
+
+      {/* Força scroll */}
+      <div style={{ height: 300 }} />
+
+    </div>
+  );
 }
-
-export default Content_Area;
-
-
-
-const styles = StyleSheet.create({
-    texto: {
-        fontWeight: 'bold',
-        fontSize: 18,
-        fontFamily: 'plus-jakarta-sans'
-    },
-    botao: {
-        marginVertical: 10,
-        marginHorizontal: 5,
-        padding: 10,
-        borderRadius: '50%',
-    },
-});

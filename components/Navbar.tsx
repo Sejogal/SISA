@@ -1,45 +1,29 @@
-import style from '@/assets/styles/style';
-import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
-//Importar icones
-import EvilIcons from '@expo/vector-icons/EvilIcons';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import '@/assets/styles/style.css';
+import React from 'react';
+// import { FiSearch, FiBell } from "react-icons/fi";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
-        <View style={style.navbar} >
-            <View style={{ marginLeft: 240, padding: 10, flex: 1, justifyContent: 'center' }} >
-                <Text style={styles.texto} >Dashboard</Text>
-            </View>
+        <nav className="navbar">
+            <div className="navbar-title">
+                <h2>{props.title}</h2>
+            </div>
 
-            <View style={{ flexDirection: 'row' }}>
-                <TouchableOpacity style={styles.botao} >
-                    <EvilIcons name="search" size={24} color="black" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Ionicons name="notifications-outline" size={24} color="black" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Text style={{fontSize:16}} >Anabelmo Feijó</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+            <div className="navbar-actions">
+                <button className="icon-button">
+                    {/* <FiSearch size={20} /> */}
+                </button>
+
+                <button className="icon-button">
+                    {/* <FiBell size={20} /> */}
+                </button>
+
+                <button className="user-button">
+                    Anabelmo Feijó
+                </button>
+            </div>
+        </nav>
     );
-}
+};
 
 export default Navbar;
-
-
-
-const styles = StyleSheet.create({
-    texto: {
-        fontWeight: 'bold',
-        fontSize: 24,
-        fontFamily: 'plus-jakarta-sans'
-    },
-    botao: {
-        marginVertical: 10,
-        marginHorizontal: 5,
-        padding: 10,
-        borderRadius: '50%',
-    },
-});

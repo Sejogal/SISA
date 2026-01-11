@@ -1,55 +1,39 @@
-import style from '@/assets/styles/style';
-import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import style from "@/assets/styles/style";
+import { Link } from "expo-router";
+import React from "react";
+import logo from "@/assets/images/Logo.png";
+import "../assets/styles/Sidebar.css";
 
 const Sidebar = () => {
     return (
-        <View style={style.sidebar} >
-            <View>
-                <Image source={require('@/assets/images/Logo.png')} style={styles.logo} />
-            </View>
+        <div className="sidebar">
+            <div className="logo-container">
+                <img src={logo} alt="Logo" className="logo" />
+                <img src="https://via.placeholder.com/150" alt="Test" />
+            </div>
 
-            <View>
-                <TouchableOpacity style={styles.botao} >
-                    <Text style={styles.texto} >Dashboard</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Text style={styles.texto} >Energia</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Text style={styles.texto} >Gestão da Bateria</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Text style={styles.texto} >Alertas e Segurança</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Text style={styles.texto} >Manutenção</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.botao}>
-                    <Text style={styles.texto} >Edifício</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+            <div className="menu">
+                <Link href="/" className="botao" >
+                    <p style={style.texto} >Dashboard</p>
+                </Link>
+                <Link href="/pages/energia" className="botao" >
+                    <p style={style.texto} >Energia</p>
+                </Link>
+                <Link href="/pages/energia" className="botao" >
+                    <p style={style.texto} >Gestão da Bateria</p>
+                </Link>
+                <Link href="/pages/energia" className="botao" >
+                    <p style={style.texto} >Alertas e Segurança</p>
+                </Link>
+                <Link href="/pages/energia" className="botao" >
+                    <p style={style.texto} >Manutenção</p>
+                </Link>
+                <Link href="/pages/energia" className="botao" >
+                    <p style={style.texto} >Edificio</p>
+                </Link>
+            </div>
+        </div>
     );
-}
+};
 
 export default Sidebar;
-
-
-
-const styles = StyleSheet.create({
-    texto: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontFamily: 'plus-jakarta-sans'
-    },
-    botao: {
-        marginVertical: 10,
-        padding: 10,
-        borderRadius: 5
-    },
-    logo: {
-        width: 150,
-        resizeMode: 'contain',
-        margin: 10
-    }
-});

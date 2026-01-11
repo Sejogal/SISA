@@ -1,7 +1,13 @@
 import "@/assets/styles/login.css";
-import logo from '../../assets/images/logo.png';
+import React from "react";
+// import logo from '../../assets/images/logo.png';
 
-export default function Login() {
+export default function Login({ estado }) {
+
+  function mudarEstado() {
+    estado('inicio');
+  }
+
   return (
     <div className="login-container">
       <div className="login-header">
@@ -11,11 +17,11 @@ export default function Login() {
       </div>
 
       <div className="login-form">
-        <label>Email</label>
-        <input type="email" placeholder="exemplo123@gmail.com" />
+        <label >Email</label>
+        <input type="email" placeholder="exemplo123@gmail.com" id="email" />
 
         <label>Senha</label>
-        <input type="password" placeholder="********" />
+        <input type="password" placeholder="********" id="senha" />
 
         <div className="login-options">
           <label>
@@ -26,7 +32,7 @@ export default function Login() {
           <a href="#">Esqueceu a senha?</a>
         </div>
 
-        <button>Entrar</button>
+        <button onClick={mudarEstado}>Entrar</button>
       </div>
     </div>
   );
